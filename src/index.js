@@ -6,9 +6,10 @@ import reducer from "./reducers";
 
 import "./index.css";
 import App from "./components/App";
+import middleware from "./middleware";
 
 const appRoot = document.getElementById("root");
-const store = createStore(reducer);
+const store = createStore(reducer, middleware);
 
 ReactDOM.render(
   <Provider store={store}>
