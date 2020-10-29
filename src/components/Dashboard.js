@@ -13,7 +13,7 @@ class Dashboard extends Component {
         <h3>Home</h3>
         <Grid container spacing={3} justify="center">
           {this.props.questionIDs.map((id) => (
-            <Grid key={id} item xs={3}>
+            <Grid key={id} item xs={4}>
               <Question id={id} />
             </Grid>
           ))}
