@@ -1,22 +1,31 @@
-import React from "react";
+import React, { Component } from "react";
+import { connect } from "react-redux";
 
-function App() {
-  return (
-    <div>
-      App is running
+import { handleInitialData } from "../actions/shared";
+
+class App extends Component {
+  componentDidMount() {
+    this.props.dispatch(handleInitialData());
+  }
+
+  render() {
+    return (
       <div>
-        Icons made by{" "}
-        <a href="https://www.flaticon.com/authors/dighital" title="Dighital">
-          Dighital
-        </a>{" "}
-        from{" "}
-        <a href="https://www.flaticon.com/" title="Flaticon">
-          {" "}
-          www.flaticon.com
-        </a>
+        App is running
+        <div align="center">
+          Icons made by{" "}
+          <a href="https://www.flaticon.com/authors/dighital" title="Dighital">
+            Dighital
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            {" "}
+            www.flaticon.com
+          </a>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
-export default App;
+export default connect()(App);
