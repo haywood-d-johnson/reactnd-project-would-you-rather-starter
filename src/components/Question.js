@@ -12,16 +12,19 @@ import {
   Avatar,
 } from "@material-ui/core";
 
-import { formatQuestion } from "../utils/helpers";
-
 class Question extends Component {
   render() {
     const { question } = this.props;
     const { author, id } = question;
-
+    console.log(this.props);
     return (
       <Card>
-        <CardHeader title={`${author} asks:`}></CardHeader>
+        <CardHeader title={`${author} asks:`}>
+          {/* <Avatar
+            alt={question.author}
+            src={this.props.users[question.author].avatarURL}
+          /> */}
+        </CardHeader>
       </Card>
     );
   }
@@ -31,7 +34,6 @@ function mapStateToProps({ authedUser, questions, users }, { id }) {
   const question = questions[id];
 
   return {
-    // question: formatQuestion(question, users[question.author]),
     authedUser,
     question,
     users,
