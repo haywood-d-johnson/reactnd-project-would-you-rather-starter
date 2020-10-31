@@ -15,16 +15,21 @@ import {
 class Question extends Component {
   render() {
     const { question } = this.props;
-    const { author, id } = question;
+    const { author, id, authorAvatar } = question;
+
     console.log(this.props);
     return (
       <Card>
-        <CardHeader title={`${author} asks:`}>
-          {/* <Avatar
-            alt={question.author}
-            src={this.props.users[question.author].avatarURL}
-          /> */}
-        </CardHeader>
+        <CardHeader
+          avatar={
+            <Avatar
+              aria-label="user"
+              alt={question.author}
+              src={authorAvatar}
+            />
+          }
+          title={`${author} asks:`}
+        ></CardHeader>
       </Card>
     );
   }
@@ -32,11 +37,13 @@ class Question extends Component {
 
 function mapStateToProps({ authedUser, questions, users }, { id }) {
   const question = questions[id];
+  const authorAvatar = users[question.author].avatarURL;
 
   return {
     authedUser,
     question,
     users,
+    authorAvatar,
   };
 }
 

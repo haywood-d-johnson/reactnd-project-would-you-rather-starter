@@ -98,3 +98,15 @@ _Parameters_: Object that contains the following properties: `authedUser`, `qid`
 ## Contributing
 
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests. For details, check out [CONTRIBUTING.md](https://github.com/udacity/reactnd-project-would-you-rather-starter/blob/master/CONTRIBUTING.md).
+
+        <!-- {/* <div align="center">
+          Icons made by{" "}
+          <a href="https://www.flaticon.com/authors/dighital" title="Dighital">
+            Dighital
+          </a>{" "}
+          from{" "}
+          <a href="https://www.flaticon.com/" title="Flaticon">
+            {" "}
+            www.flaticon.com
+          </a>
+        </div> */} -->
