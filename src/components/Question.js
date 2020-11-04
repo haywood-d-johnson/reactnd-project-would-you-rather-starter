@@ -14,20 +14,15 @@ import {
 
 class Question extends Component {
   render() {
-    const { question } = this.props;
-    const { author, id, authorAvatar } = question;
-
+    const { question, authorAvatar } = this.props;
+    const { author, id } = question;
+    console.log(authorAvatar);
     console.log(this.props);
+
     return (
       <Card>
         <CardHeader
-          avatar={
-            <Avatar
-              aria-label="user"
-              alt={question.author}
-              src={authorAvatar}
-            />
-          }
+          avatar={<Avatar src={authorAvatar} alt={author}></Avatar>}
           title={`${author} asks:`}
         ></CardHeader>
       </Card>
