@@ -2,3 +2,13 @@
     margin-bottom: 1rem;
     width: 100%;
 }
+
+
+/* Question Card */
+.card-container {
+    display: flex;
+    flex-direction: column;
+}
+.card-cardcontent {
+    align-self: center;
+}

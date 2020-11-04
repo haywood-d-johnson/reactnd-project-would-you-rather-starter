@@ -5,24 +5,34 @@ import PropTypes from "prop-types";
 import {
   Card,
   CardHeader,
-  CardActions,
   CardContent,
   Button,
   Typography,
   Avatar,
 } from "@material-ui/core";
 
+import "./App.css";
+
 class Question extends Component {
+  //TODO: react router for individual question card component
   render() {
     const { question, authorAvatar } = this.props;
     const { author, id } = question;
     console.log(this.props);
     return (
-      <Card id={id}>
+      <Card id={id} className="card-container">
         <CardHeader
           avatar={<Avatar src={authorAvatar} alt={author}></Avatar>}
           title={`${author} asks:`}
         ></CardHeader>
+        <CardContent className="card-cardcontent">
+          <Typography gutterBottom variant="h5" component="h2">
+            Would you rather...?
+          </Typography>
+          <Button variant="contained" color="primary" fullWidth>
+            View Poll
+          </Button>
+        </CardContent>
       </Card>
     );
   }

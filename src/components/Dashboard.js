@@ -14,7 +14,7 @@ class Dashboard extends Component {
         <NavBar />
         <Grid container spacing={3} justify="center">
           {this.props.questionIDs.map((id) => (
-            <Grid key={id} item xs={12}>
+            <Grid key={id} item xs={4}>
               <Question id={id} />
             </Grid>
           ))}

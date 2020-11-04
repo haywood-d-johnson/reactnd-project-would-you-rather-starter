@@ -7,6 +7,10 @@ import Dashboard from "./Dashboard";
 import Login from "./Login";
 
 class App extends Component {
+  state = {
+    isLoggedIn: null,
+  };
+
   componentDidMount() {
     this.props.dispatch(handleInitialData());
   }
