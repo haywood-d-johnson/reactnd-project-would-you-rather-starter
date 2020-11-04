@@ -16,11 +16,9 @@ class Question extends Component {
   render() {
     const { question, authorAvatar } = this.props;
     const { author, id } = question;
-    console.log(authorAvatar);
     console.log(this.props);
-
     return (
-      <Card>
+      <Card id={id}>
         <CardHeader
           avatar={<Avatar src={authorAvatar} alt={author}></Avatar>}
           title={`${author} asks:`}

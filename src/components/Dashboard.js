@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 
 import Question from "./Question";
+import NavBar from "./NavBar";
 
 import Grid from "@material-ui/core/Grid";
 
@@ -10,7 +11,7 @@ class Dashboard extends Component {
     console.log(this.props);
     return (
       <Grid container>
-        <h3>Home</h3>
+        <NavBar />
         <Grid container spacing={3} justify="center">
           {this.props.questionIDs.map((id) => (
             <Grid key={id} item xs={12}>
