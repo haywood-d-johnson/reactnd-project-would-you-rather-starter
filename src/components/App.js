@@ -17,7 +17,7 @@ class App extends Component {
 
   render() {
     const { authedUser } = this.props;
-    return <div>{this.props.loading ? null : <Dashboard />}</div>;
+    return <div>{this.props.loading ? null : <Login />}</div>;
   }
 }
 
