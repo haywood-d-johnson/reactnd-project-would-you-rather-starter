@@ -2,7 +2,18 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import { Grid, TextField, Button } from "@material-ui/core";
+import {
+  Card,
+  Input,
+  InputLabel,
+  TextField,
+  Grid,
+  Button,
+  Checkbox,
+  FormControlLabel,
+  InputAdornment,
+} from "@material-ui/core";
+import { Face, Fingerprint } from "@material-ui/icons";
 
 import { setAuthedUser } from "../actions/authedUsers";
 
@@ -19,42 +30,74 @@ class Login extends Component {
 
   render() {
     return (
-      <Grid
-        className="login-container"
-        container
-        item
-        xs={12}
-        sm={6}
-        alignItems="center"
-        direction="column"
-        justify="space-between"
-        style={{ padding: 10 }}
+      <Card
+        style={{
+          margin: "0 auto",
+          display: "flex",
+          width: "50%",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "45%",
+          padding: "1rem",
+        }}
       >
-        <div />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            maxWidth: 400,
-            minWidth: 300,
-          }}
-        >
-          <Grid container justify="center">
-            <h2>Would You Rather...?</h2>
+        <div>
+          <Grid container style={{ justifyContent: "center", margin: ".5rem" }}>
+            <Grid item>
+              <InputLabel htmlFor="input-with-icon-adornment">
+                Username
+              </InputLabel>
+              <Input
+                id="username"
+                startAdornment={
+                  <InputAdornment position="start">
+                    <Face />
+                  </InputAdornment>
+                }
+                type="username"
+              />
+            </Grid>
           </Grid>
-          <TextField label="Username" margin="normal" />
-          <TextField label="Password" margin="normal" />
-          <Button
-            style={{ marginTop: "1rem" }}
-            variant="contained"
-            color="primary"
-            fullWidth
+          <Grid container style={{ justifyContent: "center", margin: ".5rem" }}>
+            <Grid item>
+              <InputLabel htmlFor="input-with-icon-adornment">
+                Password
+              </InputLabel>
+              <Input
+                id="password"
+                startAdornment={
+                  <InputAdornment position="start">
+                    <Fingerprint />
+                  </InputAdornment>
+                }
+                type="password"
+              />
+            </Grid>
+          </Grid>
+
+          <Grid
+            container
+            style={{ justifyContent: "space-between", margin: ".5rem" }}
           >
-            Log In
-          </Button>
+            <Grid item>
+              <FormControlLabel
+                control={<Checkbox color="primary" />}
+                label="Remember me"
+              />
+            </Grid>
+            <Grid item>
+              <Button variant="text" color="primary">
+                Forgot password ?
+              </Button>
+            </Grid>
+          </Grid>
+          <Grid>
+            <Button variant="contained" color="primary" fullWidth>
+              Login
+            </Button>
+          </Grid>
         </div>
-        <div />
-      </Grid>
+      </Card>
     );
   }
 }
